@@ -20,7 +20,7 @@ Cypress.Commands.add(
 
       cy.request({
         url: `${authBaseUrl}/realms/${realm}/protocol/openid-connect/auth`,
-        followRedirect: false,
+        followRedirect: Boolean(idpHint),
         qs: {
           scope: scope
             ? scope.includes("openid")
